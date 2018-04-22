@@ -7,7 +7,7 @@ require_relative('../song.rb')
 class RoomTest < MiniTest::Test
 
   def setup
-    @room = Room.new("Room 1")
+    @room = Room.new("Room 1", 3)
     @guest = Guest.new("Joe Stafford")
     @song = Song.new("Bohemian Rhapsody")
   end
@@ -69,5 +69,13 @@ class RoomTest < MiniTest::Test
   def test_remove_guest_from_room__no_guests
     @room.remove_guest(@room.find_guest_by_name("Joe Stafford"))
     assert_equal(0, @room.occupancy_count())
+  end
+
+  def test_fill_room_to_limit
+    @room.add_guest(@guest)
+    @room.add_guest(@guest)
+    @room.add_guest(@guest)
+    @room.add_guest(@guest)
+    assert_equal(3, @room.occupancy_count())
   end
 end

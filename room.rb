@@ -1,9 +1,10 @@
 class Room
 
-  attr_reader(:name)
+  attr_reader(:name, :occupancy_limit)
 
-  def initialize(name)
+  def initialize(name, occupancy_limit)
     @name = name
+    @occupancy_limit = occupancy_limit
     @occupants = []
     @songlist = []
   end
@@ -13,6 +14,7 @@ class Room
   end
 
   def add_guest(guest)
+    return if self.occupancy_count == @occupancy_limit
     @occupants << guest
   end
 
