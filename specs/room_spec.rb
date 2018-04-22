@@ -27,7 +27,7 @@ class RoomTest < MiniTest::Test
   def test_can_add_guest
     @room.add_guest(@guest)
     assert_equal(1, @room.occupancy_count())
-    assert_equal(Guest, @room.check_occupant_type())
+    assert_equal(Guest, @room.check_occupant_class())
   end
 
   def test_get_songlist__empty
@@ -37,6 +37,7 @@ class RoomTest < MiniTest::Test
   def test_can_add_song
     @room.add_song(@song)
     assert_equal(1, @room.songlist_count())
+    assert_equal(Song, @room.check_song_class())
   end
 
 end

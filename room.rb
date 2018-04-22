@@ -16,7 +16,7 @@ class Room
     @occupants << guest
   end
 
-  def check_occupant_type()
+  def check_occupant_class()
     return @occupants[0].class()
   end
 
@@ -27,5 +27,10 @@ class Room
   def add_song(song)
     @songlist << song
   end
+
+  def check_song_class()
+    return @songlist[0].class()
+  end
+
 
 end
