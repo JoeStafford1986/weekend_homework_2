@@ -54,8 +54,19 @@ class RoomTest < MiniTest::Test
     assert_nil(nil, @room.find_guest_by_name("Joe Stafford"))
   end
 
-  def test_remove_guest_from_room
+  def test_remove_guest_from_room__guest_found
     @room.add_guest(@guest)
+    @room.remove_guest(@room.find_guest_by_name("Joe Stafford"))
+    assert_equal(0, @room.occupancy_count())
+  end
+
+  def test_remove_guest_from_room__guest_not_found
+    @room.add_guest(@guest)
+    @room.remove_guest(@room.find_guest_by_name("Jo Stafford"))
+    assert_equal(1, @room.occupancy_count())
+  end
+
+  def test_remove_guest_from_room__no_guests
     @room.remove_guest(@room.find_guest_by_name("Joe Stafford"))
     assert_equal(0, @room.occupancy_count())
   end
