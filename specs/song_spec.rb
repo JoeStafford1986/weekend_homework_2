@@ -8,6 +8,10 @@ class SongTest < MiniTest::Test
     @song = Song.new("Bohemian Rhapsody")
   end
 
+  def test_can_create_song()
+    assert_equal(Song, @song.class())
+  end
+
   def test_get_name
     assert_equal("Bohemian Rhapsody", @song.name())
   end
