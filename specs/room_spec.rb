@@ -15,4 +15,8 @@ class RoomTest < MiniTest::Test
   def test_get_name
     assert_equal("Room 1", @room.name())
   end
+
+  def test_get_occupancy__empty
+    assert_equal(0, @room.occupancy_count())
+  end
 end

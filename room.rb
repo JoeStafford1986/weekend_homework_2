@@ -8,4 +8,8 @@ class Room
     @songlist = []
   end
 
+  def occupancy_count
+    return @occupants.length()
+  end
+
 end
