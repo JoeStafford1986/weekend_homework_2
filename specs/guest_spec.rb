@@ -32,7 +32,10 @@ class GuestTest < MiniTest::Test
   end
 
   def test_make_payment
-    assert_equal(10, @guest.make_payment(@room.entry_fee()))
+    @guest.make_payment(@room.entry_fee())
+    @guest_1.make_payment(@room.entry_fee())
+    assert_equal(10, @guest.total_cash())
+    assert_equal(0, @guest_1.total_cash())
   end
 
 end
