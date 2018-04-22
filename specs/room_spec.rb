@@ -20,6 +20,10 @@ class RoomTest < MiniTest::Test
     assert_equal("Room 1", @room.name())
   end
 
+  def test_get_entry_fee
+    assert_equal(10, @room.entry_fee())
+  end
+
   def test_get_occupancy__empty
     assert_equal(0, @room.occupancy_count())
   end
