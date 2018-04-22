@@ -19,4 +19,9 @@ class Guest
     @total_cash -= balance_to_pay
   end
 
+  #placeholder method for drink order input
+  def order_drink_by_name(drink_name)
+    return drink_name
+  end
+
 end

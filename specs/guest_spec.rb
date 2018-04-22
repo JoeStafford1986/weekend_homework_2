@@ -46,19 +46,19 @@ class GuestTest < MiniTest::Test
   end
 
   def test_order_drink_by_name__drink_found
-    drink_name = "beer"
     @bar.add_stock(@drink)
-    assert_equal(true, @bar.check_stock(drink_name))
+    drink_name = @guest.order_drink_by_name("beer")
+    assert_equal(@drink, @bar.check_stock(drink_name))
   end
 
   def test_order_drink_by_name__drink_not_found
-    drink_name = "wine"
+    drink_name = @guest.order_drink_by_name("wine")
     @bar.add_stock(@drink)
     assert_equal(false, @bar.check_stock(drink_name))
   end
 
   def test_order_drink_by_name__bar_out_of_stock
-    drink_name = "wine"
+    drink_name = @guest.order_drink_by_name("wine")
     assert_equal(false, @bar.check_stock(drink_name))
   end
 

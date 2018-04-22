@@ -16,7 +16,7 @@ class Bar
     return false if (stock_count() == 0)
     @stock.each do |drink|
       if drink.name() == drink_name_to_find
-        return true
+        return drink
       end
     end
     return false
