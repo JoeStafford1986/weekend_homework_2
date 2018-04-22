@@ -19,7 +19,4 @@ class Guest
     @total_cash -= balance_to_pay
   end
 
-  # def make_payment(entry_fee)
-  #
-  # end
 end

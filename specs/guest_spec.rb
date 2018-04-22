@@ -8,6 +8,7 @@ class GuestTest < MiniTest::Test
   def setup
     @room = Room.new("Room 1", 3, 10)
     @guest = Guest.new("Joe Stafford", 20)
+    @guest_1 = Guest.new("Joe Stafford", 0)
   end
 
   def test_can_create_guest()
@@ -22,8 +23,12 @@ class GuestTest < MiniTest::Test
     assert_equal(20, @guest.total_cash())
   end
 
-  def test_check_can_afford
+  def test_check_can_afford__can_afford
     assert_equal(true, @guest.check_can_afford(@room.entry_fee()))
+  end
+
+  def test_check_can_afford__cannot_afford
+    assert_equal(false, @guest_1.check_can_afford(@room.entry_fee()))
   end
 
   def test_make_payment

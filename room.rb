@@ -17,6 +17,7 @@ class Room
 
   def add_guest(guest)
     return if occupancy_count() == @occupancy_limit
+    # return if guest.check_can_afford
     @occupants << guest
   end
 
