@@ -8,7 +8,7 @@ class RoomTest < MiniTest::Test
 
   def setup
     @room = Room.new("Room 1", 3, 10)
-    @guest = Guest.new("Joe Stafford")
+    @guest = Guest.new("Joe Stafford", 20)
     @song = Song.new("Bohemian Rhapsody")
   end
 
@@ -82,4 +82,5 @@ class RoomTest < MiniTest::Test
     @room.add_guest(@guest)
     assert_equal(3, @room.occupancy_count())
   end
+
 end
