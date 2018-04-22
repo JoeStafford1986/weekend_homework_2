@@ -24,6 +24,10 @@ class RoomTest < MiniTest::Test
     assert_equal(10, @room.entry_fee())
   end
 
+  def test_get_total_cash
+    assert_equal(0, @room.total_cash())
+  end
+
   def test_get_occupancy__empty
     assert_equal(0, @room.occupancy_count())
   end
@@ -82,5 +86,10 @@ class RoomTest < MiniTest::Test
     @room.add_guest(@guest)
     assert_equal(3, @room.occupancy_count())
   end
+
+  # def test_take_payment
+  #   @room.add_guest(@guest)
+  #   assert_equal(10, @room.total_cash())
+  # end
 
 end
