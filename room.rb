@@ -24,4 +24,8 @@ class Room
     @songlist.length()
   end
 
+  def add_song(song)
+    @songlist << song
+  end
+
 end
