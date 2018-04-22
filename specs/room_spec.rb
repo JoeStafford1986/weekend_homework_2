@@ -93,6 +93,7 @@ class RoomTest < MiniTest::Test
   def test_take_payment
     @room.add_guest(@guest)
     assert_equal(10, @room.total_cash())
+    assert_equal(10, @guest.total_cash())
   end
 
 end

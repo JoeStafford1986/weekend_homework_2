@@ -18,7 +18,7 @@ class Room
   def add_guest(guest)
     return if occupancy_count() == @occupancy_limit
     return if guest.check_can_afford(@entry_fee) == false
-    take_payment(guest)
+    take_payment()
     guest.make_payment(@entry_fee)
     @occupants << guest
   end
@@ -52,7 +52,7 @@ class Room
     @occupants.delete(guest_to_remove)
   end
 
-  def take_payment(guest)
+  def take_payment()
     @total_cash += entry_fee
   end
 
