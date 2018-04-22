@@ -9,6 +9,9 @@ class RoomTest < MiniTest::Test
   def setup
     @room = Room.new("Room 1", 3, 10)
     @guest = Guest.new("Joe Stafford", 20)
+    @guest_1 = Guest.new("John Stafford", 20)
+    @guest_2 = Guest.new("Joseph Stafford", 20)
+    @guest_3 = Guest.new("Jo Stafford", 20)
     @song = Song.new("Bohemian Rhapsody")
   end
 
@@ -81,9 +84,9 @@ class RoomTest < MiniTest::Test
 
   def test_fill_room_to_limit
     @room.add_guest(@guest)
-    @room.add_guest(@guest)
-    @room.add_guest(@guest)
-    @room.add_guest(@guest)
+    @room.add_guest(@guest_1)
+    @room.add_guest(@guest_2)
+    @room.add_guest(@guest_3)
     assert_equal(3, @room.occupancy_count())
   end
 

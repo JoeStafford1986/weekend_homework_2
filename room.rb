@@ -19,6 +19,7 @@ class Room
     return if occupancy_count() == @occupancy_limit
     return if guest.check_can_afford(@entry_fee) == false
     take_payment(guest)
+    guest.make_payment(@entry_fee)
     @occupants << guest
   end
 
