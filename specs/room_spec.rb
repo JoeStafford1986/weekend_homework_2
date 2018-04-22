@@ -40,4 +40,8 @@ class RoomTest < MiniTest::Test
     assert_equal(Song, @room.check_song_class())
   end
 
+  def test_can_find_guest_by_name__guest_found
+    @room.add_guest(@guest)
+    assert_equal(@guest, @room.find_guest_by_name("Joe Stafford"))
+  end
 end

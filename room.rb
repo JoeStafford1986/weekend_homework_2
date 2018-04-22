@@ -32,5 +32,12 @@ class Room
     return @songlist[0].class()
   end
 
+  def find_guest_by_name(guest_name)
+    @occupants.each do |guest|
+      if guest.name() == guest_name
+        return guest
+      end
+    end
+  end
 
 end
