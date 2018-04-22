@@ -28,4 +28,8 @@ class RoomTest < MiniTest::Test
     assert_equal(Guest, @room.check_occupant_type())
   end
 
+  def test_get_songlist__empty
+    assert_equal(0, @room.songlist_count())
+  end
+
 end
