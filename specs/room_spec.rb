@@ -44,4 +44,13 @@ class RoomTest < MiniTest::Test
     @room.add_guest(@guest)
     assert_equal(@guest, @room.find_guest_by_name("Joe Stafford"))
   end
+
+  def test_can_find_guest_by_name__guest_not_found
+    @room.add_guest(@guest)
+    assert_nil(nil, @room.find_guest_by_name("Jo Stafford"))
+  end
+
+  def test_can_find_guest_by_name__no_guests
+    assert_nil(nil, @room.find_guest_by_name("Joe Stafford"))
+  end
 end

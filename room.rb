@@ -38,6 +38,7 @@ class Room
         return guest
       end
     end
+    return guest = nil
   end
 
 end
