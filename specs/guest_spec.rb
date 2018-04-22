@@ -7,6 +7,7 @@ class GuestTest < MiniTest::Test
 
   def setup
     @room = Room.new("Room 1", 3, 10)
+    
     @guest = Guest.new("Joe Stafford", 20)
     @guest_1 = Guest.new("Joe Stafford", 0)
   end

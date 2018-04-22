@@ -8,11 +8,13 @@ class RoomTest < MiniTest::Test
 
   def setup
     @room = Room.new("Room 1", 3, 10)
+
+    @song = Song.new("Bohemian Rhapsody")
+
     @guest = Guest.new("Joe Stafford", 20)
     @guest_1 = Guest.new("John Stafford", 20)
     @guest_2 = Guest.new("Joseph Stafford", 20)
     @guest_3 = Guest.new("Jo Stafford", 20)
-    @song = Song.new("Bohemian Rhapsody")
   end
 
   def test_can_create_room()
@@ -73,7 +75,7 @@ class RoomTest < MiniTest::Test
 
   def test_remove_guest_from_room__guest_not_found
     @room.add_guest(@guest)
-    @room.remove_guest(@room.find_guest_by_name("Jo Stafford"))
+    @room.remove_guest(@room.find_guest_by_name("Joseph Stafford"))
     assert_equal(1, @room.occupancy_count())
   end
 
