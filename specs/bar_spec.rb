@@ -12,4 +12,9 @@ class BarTest < MiniTest::Test
     @bar = Bar.new()
   end
 
+  def test_add_stock
+    @bar.add_stock(@drink)
+    assert_equal(1, @bar.stock_count())
+  end
+
 end

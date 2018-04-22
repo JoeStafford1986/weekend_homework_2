@@ -28,7 +28,7 @@ class Room
   end
 
   def songlist_count()
-    @songlist.length()
+    return @songlist.length()
   end
 
   def add_song(song)
