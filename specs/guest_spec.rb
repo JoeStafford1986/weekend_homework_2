@@ -26,8 +26,8 @@ class GuestTest < MiniTest::Test
     assert_equal(true, @guest.check_can_afford(@room.entry_fee()))
   end
 
-  # def test_make_payment
-  #   assert_equal(10, @guest.make_payment(@room.entry_fee()))
-  # end
+  def test_make_payment
+    assert_equal(10, @guest.make_payment(@room.entry_fee()))
+  end
 
 end

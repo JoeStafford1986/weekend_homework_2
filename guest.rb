@@ -14,6 +14,11 @@ class Guest
     return false
   end
 
+  def make_payment(balance_to_pay)
+    return if !check_can_afford(balance_to_pay)
+    @total_cash -= balance_to_pay
+  end
+
   # def make_payment(entry_fee)
   #
   # end
