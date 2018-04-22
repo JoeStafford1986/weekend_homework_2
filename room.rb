@@ -16,4 +16,8 @@ class Room
     @occupants << guest
   end
 
+  def check_occupant_type()
+    return @occupants[0].class()
+  end
+
 end

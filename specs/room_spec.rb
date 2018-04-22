@@ -25,5 +25,7 @@ class RoomTest < MiniTest::Test
   def test_can_add_guest
     @room.add_guest(@guest)
     assert_equal(1, @room.occupancy_count())
+    assert_equal(Guest, @room.check_occupant_type())
   end
+
 end
