@@ -12,4 +12,8 @@ class Bar
     @stock << drink
   end
 
+  def check_stock(drink_name)
+
+  end
+
 end

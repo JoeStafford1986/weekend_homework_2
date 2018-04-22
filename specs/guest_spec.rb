@@ -1,13 +1,19 @@
 require('minitest/autorun')
 require('minitest/rg')
+require_relative('../drink.rb')
+require_relative('../bar.rb')
 require_relative('../guest.rb')
 require_relative('../room.rb')
 
 class GuestTest < MiniTest::Test
 
   def setup
+    @drink = Drink.new("beer", 1)
+
+    @bar = Bar.new()
+
     @room = Room.new("Room 1", 3, 10)
-    
+
     @guest = Guest.new("Joe Stafford", 20)
     @guest_1 = Guest.new("Joe Stafford", 0)
   end
@@ -37,6 +43,13 @@ class GuestTest < MiniTest::Test
     @guest_1.make_payment(@room.entry_fee())
     assert_equal(10, @guest.total_cash())
     assert_equal(0, @guest_1.total_cash())
+  end
+
+  def test_order_drink_by_name__drink_found
+    drink_name = "beer"
+    @bar.add_stock(@drink)
+    @guest.order_drink_by_name(drink_name, @bar)
+    assert_equal(true, @bar.check_stock(drink_name))
   end
 
 end
