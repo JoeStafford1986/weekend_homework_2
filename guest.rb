@@ -19,8 +19,4 @@ class Guest
     @total_cash -= balance_to_pay
   end
 
-  def order_drink_by_name(drink_name, bar)
-
-  end
-
 end
