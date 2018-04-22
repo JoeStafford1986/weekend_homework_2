@@ -41,4 +41,8 @@ class Room
     return guest = nil
   end
 
+  def remove_guest(guest_to_remove)
+    @occupants.delete(guest_to_remove)
+  end
+
 end
