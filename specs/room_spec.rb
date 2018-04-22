@@ -7,7 +7,7 @@ require_relative('../song.rb')
 class RoomTest < MiniTest::Test
 
   def setup
-    @room = Room.new("Room 1", 3)
+    @room = Room.new("Room 1", 3, 10)
     @guest = Guest.new("Joe Stafford")
     @song = Song.new("Bohemian Rhapsody")
   end
