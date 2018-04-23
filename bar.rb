@@ -13,13 +13,17 @@ class Bar
   end
 
   def check_stock(drink_name_to_find)
-    return false if (stock_count() == 0)
+    return nil if (stock_count() == 0)
     @stock.each do |drink|
       if drink.name() == drink_name_to_find
         return drink
       end
     end
-    return false
+    return nil
+  end
+
+  def charge_to_guest_bar_tab(guest, delivered_drink)
+    
   end
 
 end

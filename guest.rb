@@ -1,10 +1,11 @@
 class Guest
 
-  attr_reader(:name, :total_cash)
+  attr_reader(:name, :total_cash, :bar_tab)
 
   def initialize(name, total_cash)
     @name = name
     @total_cash = total_cash
+    @bar_tab = 0
   end
 
   def check_can_afford(balance_to_pay)
