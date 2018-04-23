@@ -56,4 +56,8 @@ class Room
     @total_cash += entry_fee
   end
 
+  # def take_payment_of_bar_tab(guest)
+  #
+  # end
+
 end

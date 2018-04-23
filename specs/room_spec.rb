@@ -100,7 +100,8 @@ class RoomTest < MiniTest::Test
 
   # def test_collect_payment_of_tab_on_exit
   #   @room.add_guest(@guest)
-  #
+  #   @guest.
+  #   @room.take
   # end
 
 end
