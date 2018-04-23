@@ -20,12 +20,11 @@ class BarTest < MiniTest::Test
     assert_equal(1, @bar.stock_count())
   end
 
-
   def test_charge_to_guest_bar_tab
     @bar.add_stock(@drink)
     ordered_drink = @guest.order_drink_by_name("beer")
     delivered_drink = @bar.check_stock(ordered_drink)
-    @bar.charge_to_guest_bar_tab(@guest, delivered_drink)
+    @bar.charge_to_guest_bar_tab(@guest, delivered_drink.price())
     assert_equal(1, @guest.bar_tab())
   end
 

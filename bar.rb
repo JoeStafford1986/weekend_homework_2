@@ -22,8 +22,8 @@ class Bar
     return nil
   end
 
-  def charge_to_guest_bar_tab(guest, delivered_drink)
-    
+  def charge_to_guest_bar_tab(guest, price)
+    guest.bar_tab += price
   end
 
 end
